@@ -1,50 +1,17 @@
-# React + TypeScript + Vite
+# 리액트에서 브라우저 스토리지에 데이터를 저장하고 이를 구독하는 예시
+- Example Code for How to Store Data in Browser Storage and Subscribe it in React Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![ScreenRecording2025-01-12at10 13 48PM-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/582c3bbb-6ff8-4ace-b450-a5ae728a2408)
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 실행
+```bash
+yarn
+yarn dev
 ```
+이후 localhost:5173에서 페이지를 볼 수 있습니다.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 구현
+### shared/lib/browserStorageManageHelpers.ts
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### shared/lib/browserStorageHelpers.ts
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
